@@ -1,0 +1,20 @@
+body {
+    font-family: sans-serif;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+.btn-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+button {
+    padding: 0.5em;
+    font-size: 1rem;
+    margin: 0.4em;
+  }
