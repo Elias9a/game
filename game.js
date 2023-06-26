@@ -1,4 +1,7 @@
 const choices = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
+let roundCount = 0;
 
 const computerPlay = () => choices[Math.floor(Math.random() * choices.length)];
 
@@ -9,20 +12,65 @@ const playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   } 
-  else if(playerSelection === "rock" && computerSelection === "paper") return "You lose!";
-  else if(playerSelection === "paper" && computerSelection === "rock") return "You win!";
-  else if(playerSelection === "scissors" && computerSelection === "rock")  return "You lose!";
-  else{ return "You win!"; }
+  else if((playerSelection === "rock" && computerSelection === "paper") ||
+  (playerSelection === "paper" && computerSelection === "rock") ||
+  (playerSelection === "scissors" && computerSelection === "rock")){
+    computerScore++
+    return "You lose!";
+  }else{ 
+    playerScore++
+    return "You win!"; }
 }
 
 
 const buttons = document.querySelectorAll("button");
+const playerSelection = document.querySelector('#player-score');
+const computerSelection = document.querySelector('#computer-score');
+const playerScoreDisplay = document.querySelector('#player-score');
+const computerScoreDisplay = document.querySelector('#computer-score')
+const playAgainButton = document.querySelector('#play-again')
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const playerSelection = button.id;
-    const computerSelection = computerPlay();
-    const roundResult = playRound(playerSelection, computerSelection);
-    result.textContent = roundResult;
-  });
-})
+const updateScores = () => {
+  playerScoreDisplay.textContent = `player: ${playerScore}`;
+  computerScoreDisplay.textContent = `computer: ${computerScore}`;
+};
+
+const endGame = () => {
+  buttons.forEach(btn => {
+    btn.removeEventListener("click", handleClick);
+    btn.disabled = true;
+  })
+  playAgainButton.disabled = false;
+  const finalResult = playerScore > computerScore
+  ? "You win the game!" : playerScore < computerScore
+  ? "You lose the game!" : "It's a tie game";
+  result.textContent = finalResult;
+  result.classList.add("animate-result");
+}
+
+const playAgain = () => {
+  playerScore = 0;
+  computerScore = 0;
+  roundCount = 0; 
+  result.textContent = "";
+  result.classList.removeEventListener("animate-result")
+  updateScores();
+  buttons.forEach(btn => btn.disabled = false);
+  handleClick()
+}
+
+const handleClick = () => {
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      roundCount++;
+      result.textContent = playRound(btn.id, computerPlay());
+      result.classList.add("animate-result")
+      updateScores();
+      
+      if(roundCount === 5 || playerScore === 3 || computerScore === 3) return endGame()
+    });
+  })
+}
+
+handleClick()
+playAgainButton.addEventListener("click", playAgain)
