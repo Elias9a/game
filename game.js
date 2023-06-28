@@ -22,7 +22,6 @@ const playRound = (playerSelection, computerSelection) => {
     return "You win!"; }
 }
 
-
 const buttons = document.querySelectorAll("button");
 const playerSelection = document.querySelector('#player-score');
 const computerSelection = document.querySelector('#computer-score');
@@ -40,12 +39,13 @@ const endGame = () => {
     btn.removeEventListener("click", handleClick);
     btn.disabled = true;
   })
+
   playAgainButton.disabled = false;
+
   const finalResult = playerScore > computerScore
   ? "You win the game!" : playerScore < computerScore
   ? "You lose the game!" : "It's a tie game";
   result.textContent = finalResult;
-  result.classList.add("animate-result");
 }
 
 const playAgain = () => {
@@ -53,7 +53,6 @@ const playAgain = () => {
   computerScore = 0;
   roundCount = 0; 
   result.textContent = "";
-  // result.classList.removeEventListener("animate-result")
   updateScores();
   buttons.forEach(btn => btn.disabled = false);
   handleClick()
@@ -64,7 +63,6 @@ const handleClick = () => {
     btn.removeEventListener("click", handleButtonClick);
     btn.addEventListener("click", handleButtonClick)
   })
-
 }
 
 const handleButtonClick = (event) => {
@@ -79,6 +77,5 @@ const handleButtonClick = (event) => {
   }
 }
  
-
 handleClick()
 playAgainButton.addEventListener("click", playAgain)
