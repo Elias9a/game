@@ -53,7 +53,7 @@ const playAgain = () => {
   computerScore = 0;
   roundCount = 0; 
   result.textContent = "";
-  result.classList.removeEventListener("animate-result")
+  // result.classList.removeEventListener("animate-result")
   updateScores();
   buttons.forEach(btn => btn.disabled = false);
   handleClick()
@@ -61,16 +61,24 @@ const playAgain = () => {
 
 const handleClick = () => {
   buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      roundCount++;
-      result.textContent = playRound(btn.id, computerPlay());
-      result.classList.add("animate-result")
-      updateScores();
-      
-      if(roundCount === 5 || playerScore === 3 || computerScore === 3) return endGame()
-    });
+    btn.removeEventListener("click", handleButtonClick);
+    btn.addEventListener("click", handleButtonClick)
   })
+
 }
+
+const handleButtonClick = (event) => {
+  const btn = event.target;
+  roundCount++;
+  result.textContent = playRound(btn.id, computerPlay());
+  updateScores();
+  
+  if(roundCount === 5 || playerScore === 3 || computerScore === 3) {
+    endGame()
+    return;
+  }
+}
+ 
 
 handleClick()
 playAgainButton.addEventListener("click", playAgain)
