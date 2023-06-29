@@ -1,13 +1,11 @@
 body {
     font-family: sans-serif;
 }
-
 .game-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-
 }
 .btn-wrapper{
     display: flex;
@@ -17,52 +15,26 @@ button {
     padding: 0.5em 1rem;
     font-size: 1rem;
     margin: 0.4em;
-    transition: transform 2s ease;
   }
-  button:disabled {
-      opacity: 0.5;
-      
+button:disabled {
+    opacity: 0.5;   
   }
 
-  .score {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
   }
 
-  .result {
-      font-size: 2rem;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+.result {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #000;
   }
-  
-  .reset-wrapper {
+
+.reset-wrapper {
     display: flex;
     justify-content: center;
     align-content: center;
-  }
-
-  .animate-result {
-      animation: fade-in 0.3s ease forwards;
-  }
-  .animate-button {
-      animation: fade-in 0.2s ease forwards;
-  }
-  
-   @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes scale-in {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
   }
