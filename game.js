@@ -8,6 +8,8 @@ const computerPlay = () => choices[Math.floor(Math.random() * choices.length)];
 const playRound = (playerSelection, computerSelection) => {
   playerSelection = playerSelection.toLowerCase();
   computerSelection = computerSelection.toLowerCase();
+
+  result.classList.remove("result-win", "result-lose", "result-tie")
   
   if (playerSelection === computerSelection) {
     return "It's a tie!";
@@ -42,10 +44,22 @@ const endGame = () => {
 
   playAgainButton.disabled = false;
 
+  let resultColorClass = "";
+  if (playerScore > computerScore) {
+    resultColorClass = "result-win";
+  } else if (playerScore < computerScore) {
+    resultColorClass = "result-lose";
+  } else {
+    resultColorClass = "result-tie";
+  }
+
   const finalResult = playerScore > computerScore
   ? "You win the game!" : playerScore < computerScore
   ? "You lose the game!" : "It's a tie game";
+  
   result.textContent = finalResult;
+  result.classList.remove("result-win", "result-lose", "result-tie");
+  result.classList.add(resultColorClass);
 }
 
 const playAgain = () => {
