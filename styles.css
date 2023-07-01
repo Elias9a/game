@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  background-color: #5dcfe3;
 }
 .game-wrapper {
   display: flex;
@@ -15,6 +16,8 @@ button {
   padding: 0.5em 1rem;
   font-size: 1rem;
   margin: 0.4em;
+  background-color: #0530f2;
+  color: #5dcfe3;
 }
 button:disabled {
   opacity: 0.5;   
