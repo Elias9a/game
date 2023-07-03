@@ -22,6 +22,7 @@ button {
   border-radius: 0.3rem;
   border-color: #5dcfe3;
 }
+
 button:disabled {
   opacity: 0.5;   
 }
