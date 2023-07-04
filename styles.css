@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   background-color: #5dcfe3;
 }
+
 .game-wrapper {
   display: flex;
   flex-direction: column;
@@ -24,7 +25,7 @@ button {
 }
 
 button:disabled {
-  opacity: 0.5;   
+  opacity: 0.6;   
 }
 
 .score {
