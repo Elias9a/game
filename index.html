@@ -10,19 +10,22 @@
   <body>
     <div class="game-wrapper">
         <h1>Rock Paper Scissors</h1>
-        <div class="btn-wrapper">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+        <div class="game-container">
+          <div class="btn-wrapper">
+              <button class="ply-btn" id="rock">Rock</button>
+              <button class="ply-btn" id="paper">Paper</button>
+              <button class="ply-btn" id="scissors">Scissors</button>
+          </div>
+          <div class="score">
+            <span class="round-result" id="player-score"></span>
+            <span class="round-result" id="computer-score"></span>
+          </div>
+          <p class="result" id="result"></p>
+      
+          <div class="reset-wrapper">
+            <button id="play-again">Restart to play again</button>
+          </div>
         </div>
-        <div class="score">
-          <span id="player-score"></span>
-          <span id="computer-score"></span>
-        </div>
-        <p class="result" id="result"></p>
-    </div>
-    <div class="reset-wrapper">
-      <button id="play-again">Restart to play again</button>
     </div>
     
     <script src="game.js"></script>

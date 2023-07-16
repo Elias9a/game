@@ -1,6 +1,6 @@
 body {
-  font-family: sans-serif;
-  background-color: #5dcfe3;
+  font-family: "Arial", sans-serif;
+  background-color: #3c3c3c;
 }
 
 .game-wrapper {
@@ -8,37 +8,80 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  justify-content: center;
 }
+
+.game-container{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  box-shadow: 0 0 0.9rem  rgba(92, 92, 97, 0.5);
+  
+} 
+
 .btn-wrapper{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
+
+.ply-btn {
+  background-color: #ff8c00;
+  width: 8rem;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 5px #ff8c00;
+  cursor: pointer;
+}
+
+.round-result {
+  color:#f1f1f1;
+  font-size: 1.2rem;
+  margin: 0.4em;
+  
+}
+
+h1 {
+  color: #ff4081;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 button {
   padding: 0.5em 1rem;
   font-size: 1rem;
   margin: 0.4em;
-  background-color: #0530f2;
-  color: #5dcfe3;
-  box-shadow: 5px 5px 5px #0530f2;
+  background-color: #53c4c4;
+  color: #fff;
+  box-shadow: 0px 0px 10px #53c4c4;
   border-radius: 0.3rem;
-  border-color: #5dcfe3;
+  border: none;
+  cursor: pointer;
 }
 
 button:disabled {
-  opacity: 0.6;   
+  opacity: 0.6;  
+  cursor: not-allowed; 
 }
 
 .score {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1.5rem 0rem;
+  color: #ff4081;
 }
 
 .result {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 1rem;
-  color: #000;
 }
 
 .result-lose {
@@ -46,15 +89,27 @@ button:disabled {
 }
 
 .result-win {
-  color: green;
+  color: #53c46e;
 }
 
 .result-tie {
-  color: blue;
+  color: #aaa;
 }
 
 .reset-wrapper {
   display: flex;
   justify-content: center;
   align-content: center;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #ff4081;
+}
+
+.reset-wrapper:hover {
+  background-color: #ff5c9f;
 }
