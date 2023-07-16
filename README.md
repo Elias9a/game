@@ -7,19 +7,19 @@ Elias Adam
 
 ## rule of game as follow:
 
-     * if the selection of the user and machine are the same input, the outcome is a tie.
+     *  if the selection of the user and machine are the same input, the outcome is a tie.
 
-     * if user selected rock and machine selected paper, user loose.
+     *  if user selected rock and machine selected paper, user loose.
 
-     * if user selected  paper and machine selected rock, user win.
+     *  if user selected  paper and machine selected rock, user win.
 
-     * The over game play upto 5 rounds and highest scores of 5 round wins the game.
+     *  The over game play upto 5 rounds and highest scores of 5 round wins the game.
 
-     * Each round is recorder and result will be diplayed on the screen.
+     *  Each round is recorder and result will be diplayed on the screen.
 
-     * After 5 rounds the game ends and rock, paper, scissor buttons display. 
-     
-     * User has to reset the game by pressing the restart button.
+     *  After 5 rounds the game ends and rock, paper, scissor buttons display. 
+
+     *  User has to reset the game by pressing the restart button.
 
 ## Gitub repository
 
